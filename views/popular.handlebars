@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col custom-table-width">
+        <h1 class="main-title">Most popular restaurants</h1>
+        <table class="table table-bordered table-striped">
+          <caption>List of restaurants</caption>
+          <thead>
+            <tr>
+              <th scope="col">index</th>
+              <th scope="col">img</th>
+              <th scope="col">name</th>
+              <th scope="col">rating</th>
+              <th scope="col">category</th>
+              <th scope="col">location</th>
+              <th scope="col">phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each restaurants}}
+
+            <tr>
+              <th scope="row">{{math @index "+" 1}}</th>
+              <td>
+                <a href="/restaurants/{{this.id}}" class="text-secondary">
+                  <img class="popular-res-img" src="{{this.image}}" alt="{{this.name}}">
+                </a>
+              </td>
+              <td>{{this.name}}</td>
+              <td>{{this.rating}}</td>
+              <td>{{this.category}}</td>
+              <td>{{this.location}}</td>
+              <td>{{this.phone}}</td>
+            </tr>
+
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

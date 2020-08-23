@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EL-find food</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- navi bar -->
+  <header class="header">
+    <div class="responsive-bar"></div>
+    <div class="header_content">
+      <div class="header_logo">
+        <a class="header_logo-img" href="/" aria-label="Home"></a>
+        <i id="header_responsive_icon" class="fas fa-bars"></i>
+      </div>
+      <div class="menu">
+        <nav class="header_nav">
+          <ul>
+            <li><a href="/">首頁</a></li>
+            <li><a href="/popular">熱門排行</a></li>
+            {{#if isAuthenticated}}
+            <li><a href="/new">新增項目</a></li>
+            <li><a href="/favorite">收藏店家</a></li>
+            {{else}}
+            <li><a href="/users/register">加入會員</a></li>
+            {{/if}}
+
+
+          </ul>
+        </nav>
+        {{#if isAuthenticated}}
+        <a class="header_btn" href="/users/logout">LogOUT</a>
+        {{else}}
+        <a class="header_btn" href="/users/login">LogIN</a>
+        {{/if}}
+      </div>
+    </div>
+  </header>
+  <!-- banner -->
+  <section class="banner">
+
+    <div class="highlight-text">
+
+      {{#if isAuthenticated}}<h1 id="username-home">Hello! <span style="color:gold">{{user.name}}</span></h1>{{/if}}
+      {{#if isAuthenticated}}
+      <h1>Tickle your taste buds!</h1>
+
+      <h2>Do n’t be afraid of getting hungry for lunch, quickly find your favorite food!
+      </h2>
+      <form action="/search" style="{{#if root}}display: none;{{/if}}">
+        <div class="input-group">
+
+          <input id="keyword-input" type="text" name="keyword" class="form-control"
+            placeholder="input restaurant、category(type all to find all restaurant)" aria-label="Restaurant Name..."
+            value="{{query}}" aria-describedby="search-button">
+
+          <div class="input-group-append">
+            <button class="btn btn-major" type="submit" id="search-button">search <i
+                class="fas fa-search"></i></i></button>
+          </div>
+
+        </div>
+      </form>
+
+      <div class="mt-3" style="width: 10vw;">
+        <form action="/sort" method="get">
+          <select name="type" id="" class="btn form-control btn-info" onchange="this.form.submit()"
+            style="cursor:pointer;{{#if root}}display: none;{{/if}}">
+            <option value="title" disabled selected>SortBy..</option>
+            <option value="name" {{#if (eq type "name") }}selected{{/if}}>A to Z</option>
+            <option value="name_des" {{#if (eq type "name_des")}}selected{{/if}}>Z to A</option>
+            <option value="category" {{#if (eq type "category")}}selected{{/if}}>類別</option>
+            <option value="location" {{#if (eq type "location")}}selected{{/if}}>地區</option>
+          </select>
+        </form>
+      </div>
+
+      {{/if}}
+
+    </div>
+
+
+    <div class="banner-background"></div>
+  </section>
+
+  {{{body}}}
+
+
+
+
+  <div class="footer">
+
+    <p class="copyright">© 2020 Emily40830. All rights reserved.</p>
+
+  </div>
+
+
+
+  <script src="https://kit.fontawesome.com/a470dfdd95.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="/javascripts/main.js"></script>
+</body>
+
+</html>
