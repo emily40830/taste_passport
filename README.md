@@ -11,7 +11,7 @@
 ## 專案總覽 OverView
 
 ![login](https://github.com/emily40830/taste_passport/blob/master/public/img/login.png)
-![all](https://github.com/emily40830/tasteBuds_/blob/refactor/public/img/sort.png)
+![all](https://github.com/emily40830/tasteBuds_passport/blob/master/public/img/sort.png)
 
 ## 專案特色 Features
 
