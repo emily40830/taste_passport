@@ -1,8 +1,8 @@
 # tasteBuds_passport
 
-使用 node.js + Express 創建的餐廳瀏覽頁面
+使用 node.js + Express 創建的餐廳瀏覽頁面  
 利用 passport 新增登入 註冊功能  
-(update on 8/23)新增第三方登入功能：FaceBook
+(update on 8/23)新增第三方登入功能：FaceBook  
 (update on 5/21)新增收藏功能  
 (update on 5/20)優化 sorting 方式  
 (update on 5/17)重構路由  
@@ -10,7 +10,8 @@
 
 ## 專案總覽 OverView
 
-![](https://github.com/emily40830/tasteBuds_/blob/refactor/public/img/sort.png)
+![login](https://github.com/emily40830/taste_passport/blob/master/public/img/login.png)
+![all](https://github.com/emily40830/tasteBuds_/blob/refactor/public/img/sort.png)
 
 ## 專案特色 Features
 
