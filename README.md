@@ -1,8 +1,8 @@
 # tasteBuds_passport
 
 使用 node.js + Express 創建的餐廳瀏覽頁面
+利用 passport 新增登入 註冊功能  
 (update on 8/23)新增第三方登入功能：FaceBook
-(update on 8/23)利用 passport 新增登入 註冊功能
 (update on 5/21)新增收藏功能  
 (update on 5/20)優化 sorting 方式  
 (update on 5/17)重構路由  
@@ -10,10 +10,11 @@
 
 ## 專案總覽 OverView
 
-![](https://github.com/emily40830/tasteBuds_express/blob/refactor/public/img/sort.png)
+![](https://github.com/emily40830/tasteBuds_/blob/refactor/public/img/sort.png)
 
 ## 專案特色 Features
 
+- (update on 8/22) 加入登入與註冊功能，所有服務皆可綁定帳號
 - (update on 5/21) 新增收藏餐廳功能
 - (update on 5/17) 增加依照不同餐廳屬性排序的功能
 - (update on 5/16) 增加新增餐廳的選項
@@ -28,7 +29,7 @@
 1. 將專案 clone 到本地端
 
 ```
-git clone https://github.com/emily40830/tasteBuds_express.git
+git clone https://github.com/emily40830/tasteBuds_passport.git
 ```
 
 2. 進入到專案資料夾後，安裝 packages(依照 package.json 的項目安裝)
@@ -55,12 +56,19 @@ npm run seed
 
 ## 開發環境 Development environment
 
-- Node.js: v10.16.0
-- Express: v4.17.1
-- Express-Handlebars: v4.0.4
-- Mongoose: v5.9.14
-- method-override: v3.0.0
-- handlebars-helpers: v0.10.0
+- bcryptjs: v2.4.3
+- body-parser: v1.19.0
+- connect-flash": v0.1.1,
+- dotenv: v8.2.0,
+- express: v4.17.1,
+- express-handlebars: v5.1.0,
+- express-session: v1.17.1,
+- handlebars-helpers: v0.10.0,
+- method-override: v3.0.0,
+- mongoose: v5.10.0,
+- passport: v0.4.1,
+- passport-facebook: v3.0.0,
+- passport-local: v1.0.0
 
 ## Author
 
