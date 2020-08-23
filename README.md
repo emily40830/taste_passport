@@ -40,17 +40,19 @@ git clone https://github.com/emily40830/tasteBuds_passport.git
 npm install
 ```
 
-3. 透過 nodemon 啟動專案
+3. 透過.env.example 檔案，新建.env 在專案資歷夾內，填上 SESSION_SECRET，並依照自行建立的 Facebook 專案填入 FACEBOOK_ID 與 FACEBOOK_SECRET
+
+4. 透過 nodemon 啟動專案
 
 ```
 npm run dev
 ```
 
-4. 在 terminal 可以看到 `Running on the localhost:3000`，開啟瀏覽器在網址列輸入 localhost:3000 或點[這裡](http://localhost:3000)
+5. 在 terminal 可以看到 `Running on the localhost:3000`，開啟瀏覽器在網址列輸入 localhost:3000 或點[這裡](http://localhost:3000)
 
 - p.s: 也可透過 `npm start`啟動伺服器
 
-5. 另開一終端機視窗，啟動資料庫並放入種子資料
+6. 另開一終端機視窗，啟動資料庫並放入種子資料
 
 ```
 npm run seed
