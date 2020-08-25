@@ -1,3 +1,4 @@
+require('dotenv').config();
 const db = require('../../config/mongoose');
 const Restaurant = require('../restaurant');
 const User = require('../user');
@@ -22,13 +23,11 @@ db.once('open', () => {
         createSeed(users[0], 0, 3),
         createSeed(users[1], 3, 3),
       ];
-      Promise.all(allPromises)
-        .then((res) => {
+      return Promise.all(allPromises)
+        .then(() => {
           console.log('Sucessfully');
           //如果不加setTimeout 就會有幾筆resaurant data建立不起來
-          setTimeout(() => {
-            process.exit();
-          }, 20);
+          return process.exit();
         })
         .catch((err) => console.log(err));
     }
@@ -53,11 +52,11 @@ const createSeed = (user, start, num) => {
         const userId = user._id;
         console.log(userId);
         //resolve(
-        Promise.all(
+        return Promise.all(
           Array.from({ length: num }, (_, i) => {
             //console.log(i + start);
 
-            Restaurant.create({
+            return Restaurant.create({
               restaurant_id: restaurants[i + start].id,
               name: restaurants[i + start].name,
               name_en: restaurants[i + start].name_en,

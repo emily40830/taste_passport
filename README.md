@@ -40,7 +40,7 @@ git clone https://github.com/emily40830/tasteBuds_passport.git
 npm install
 ```
 
-3. 透過.env.example 檔案，新建.env 在專案資歷夾內，填上 SESSION_SECRET，並依照自行建立的 Facebook 專案填入 FACEBOOK_ID 與 FACEBOOK_SECRET
+3. 透過.env.example 檔案，新建.env 在專案資料夾內，填上 SESSION_SECRET，並依照自行建立的 Facebook app 填入 FACEBOOK_ID 與 FACEBOOK_SECRET
 
 4. 透過 nodemon 啟動專案
 
