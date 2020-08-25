@@ -17,12 +17,13 @@ db.once('open', () => {
     //console.log(user);
     if (user.length) {
       console.log('email is existed!');
-      process.exit();
+      return process.exit();
     } else {
       const allPromises = [
         createSeed(users[0], 0, 3),
         createSeed(users[1], 3, 3),
       ];
+      // 8/25 更：確保每個在then 裡的function 都有return
       return Promise.all(allPromises)
         .then(() => {
           console.log('Sucessfully');
@@ -53,10 +54,12 @@ const createSeed = (user, start, num) => {
         console.log(userId);
         //resolve(
         return Promise.all(
+          //8/25更：return 非同步函式
           Array.from({ length: num }, (_, i) => {
             //console.log(i + start);
 
             return Restaurant.create({
+              //8/25更：return 非同步函式
               restaurant_id: restaurants[i + start].id,
               name: restaurants[i + start].name,
               name_en: restaurants[i + start].name_en,
