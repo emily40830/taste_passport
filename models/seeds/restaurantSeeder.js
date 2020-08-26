@@ -27,7 +27,6 @@ db.once('open', () => {
       return Promise.all(allPromises)
         .then(() => {
           console.log('Sucessfully');
-          //如果不加setTimeout 就會有幾筆resaurant data建立不起來
           return process.exit();
         })
         .catch((err) => console.log(err));
